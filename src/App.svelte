@@ -26,7 +26,7 @@ let posts = [
 		<input type="text" name="author" placeholder="Author" required /><br />
 		<input type="text" name="date" placeholder="Date" /><br />
 		<textarea name="content" placeholder="Content"></textarea><br />
-		<Button variant="success" />
+		<Button variant="success" text="Add"/>
 	</form>
 	<div class="posts">
 		{#each posts as post}
