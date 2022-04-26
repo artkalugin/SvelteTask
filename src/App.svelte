@@ -22,10 +22,10 @@ let posts = [
 <main>
 	<h1>SvelteTask</h1>
 	<form on:submit|preventDefault={createPost}>
-		<input type="text" name="title" placeholder="Title" required /><br />
-		<input type="text" name="author" placeholder="Author" required /><br />
-		<input type="text" name="date" placeholder="Date" /><br />
-		<textarea name="content" placeholder="Content"></textarea><br />
+		<input type="text" name="title" placeholder="Title" required />
+		<input type="text" name="author" placeholder="Author" required />
+		<input type="text" name="date" placeholder="Date" />
+		<textarea name="content" placeholder="Content" rows="5"></textarea>
 		<Button variant="success" text="Add"/>
 	</form>
 	<div class="posts">

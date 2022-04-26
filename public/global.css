@@ -35,6 +35,7 @@ input, button, select, textarea {
 	font-size: inherit;
 	-webkit-padding: 0.4em 0;
 	padding: 0.4em;
+	margin: 0 0 0.5em 0;
 	box-sizing: border-box;
 	border: 1px solid #dddddd;
 	border-radius: 4px;
@@ -42,6 +43,10 @@ input, button, select, textarea {
 
 input:disabled {
 	color: #ccc;
+}
+
+textarea {
+	resize: vertical;
 }
 
 button {
@@ -52,15 +57,15 @@ button {
 }
 
 button:disabled {
-	color: #999;
+	filter: opacity(25%);
 }
 
 button:not(:disabled):active {
-	background-color: #ddd;
+	filter: opacity(85%);
 }
 
 button:focus {
-	border-color: #666;
+	border: 1px solid #aaa;
 }
 
 .primary {
