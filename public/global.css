@@ -61,3 +61,15 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+.primary {
+	background-color: blue;
+}
+
+.success {
+	background-color: green;
+}
+
+.error {
+	background-color: red;
+}
