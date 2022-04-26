@@ -20,6 +20,7 @@ let posts = [
 </script>
 
 <main>
+	<h1>SvelteTask</h1>
 	<form on:submit|preventDefault={createPost}>
 		<input type="text" name="title" placeholder="Title" required /><br />
 		<input type="text" name="author" placeholder="Author" required /><br />
@@ -36,16 +37,20 @@ let posts = [
 
 <style>
 	main {
-		text-align: center;
 		padding: 1em;
-		max-width: 240px;
+		max-width: 600px;
 		margin: 0 auto;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	form {
+		display: grid;
+		grid-template-columns: 1fr;
 	}
 
+	.posts {
+		margin-top: 1.5em;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1em;
+	}
 </style>
