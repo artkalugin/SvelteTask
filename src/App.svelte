@@ -1,8 +1,21 @@
 <script>
-	let posts = [] // Store the posts here
+	import Button from './Button.svelte';
+	import Post from './Post.svelte';
 
-	const createPost = () => {
-		// Your logic to create a post goes here
+let posts = [
+		{ title: 'Lorem Ipsum', author: 'Artemii Kalugin', date: 'April 26, 2022', content: 'Lorem ipsum dolor sit amet'},
+		{ title: 'Ipsum Lorem', author: 'John Smith', date: 'April 18, 2022', content: 'Amet sit dolor ipsum lorem'}
+	]
+
+	const createPost = (evt) => {
+		const formData = new FormData(evt.target);
+		const data = {};
+		for (let field of formData) {
+			const [key, value] = field;
+      		data[key] = value;
+    	}
+		posts = [data, ...posts];
+		evt.target.reset();
 	}
 </script>
 
@@ -12,10 +25,12 @@
 		<input type="text" name="author" placeholder="Author" required /><br />
 		<input type="text" name="date" placeholder="Date" /><br />
 		<textarea name="content" placeholder="Content"></textarea><br />
-		<button>Create</button>
+		<Button variant="success" />
 	</form>
 	<div class="posts">
-		<!-- Your posts go here -->
+		{#each posts as post}
+			<Post {...post} />
+		{/each}
 	</div>
 </main>
 
@@ -32,4 +47,5 @@
 			max-width: none;
 		}
 	}
+
 </style>
