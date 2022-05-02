@@ -1,15 +1,16 @@
 <script>
-    export let variant;
-    export let text = 'Create';
+  export let variant;
 </script>
 
-<button class="{variant}">{text}</button>
+<button class={variant}>
+  <slot>Add</slot>
+</button>
 
 <style>
-    button {
-        color: #ffffff;
-        width: 150px;
-        height: 40px;
-        justify-self: end;
-    }
+  button {
+    color: #ffffff;
+    width: 150px;
+    height: 40px;
+    justify-self: end;
+  }
 </style>
