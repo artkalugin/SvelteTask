@@ -1,4 +1,5 @@
 <script>
+  import MaskInput from "svelte-input-mask/MaskInput.svelte";
   import Button from "./Button.svelte";
   import Post from "./Post.svelte";
 
@@ -17,6 +18,9 @@
     },
   ];
 
+  let maskString = "DD.MM.YYYY";
+  let mask = "00.00.0000";
+
   const createPost = (evt) => {
     const formData = new FormData(evt.target);
     const data = {};
@@ -34,7 +38,12 @@
   <form on:submit|preventDefault={createPost}>
     <input type="text" name="title" placeholder="Title" required />
     <input type="text" name="author" placeholder="Author" required />
-    <input type="text" name="date" placeholder="Date" />
+    <MaskInput
+      {maskString}
+      {mask}
+      name="date"
+      placeholder="Date ({maskString})"
+    />
     <textarea name="content" placeholder="Content" rows="5" />
     <Button variant="success">Submit</Button>
   </form>
